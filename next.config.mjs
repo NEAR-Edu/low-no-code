@@ -16,6 +16,7 @@ export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
   images: {
+    unoptimized: true,
     domains: ["dl.airtable.com"],
   },
 });
