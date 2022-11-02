@@ -9,8 +9,6 @@ export const getStaticProps: GetStaticProps<{
 }> = async () => {
   const records = await fetchAllRecords();
 
-  console.log(records);
-
   return {
     props: {
       records,
@@ -28,10 +26,23 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       </Head>
 
       <main className="h-screen overflow-y-scroll bg-gradient-to-br from-blue-100 via-white to-white text-gray-600">
-        <div className="flex flex-col items-center justify-center py-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center py-8">
           <h1 className="my-10 text-5xl font-bold">
             Low/No code integrations for NEAR
           </h1>
+
+          <section className="flex h-[50vh] flex-col items-start justify-center place-self-start px-10 text-left text-gray-600">
+            <h2 className="text-3xl font-bold">
+              Developing with Low/No code tools on NEAR is here.
+            </h2>
+            <p className="text-2xl">
+              Check this{" "}
+              <b>
+                <i>non</i>
+              </b>{" "}
+              exhaustive list of integrations for the NEAR protocol.
+            </p>
+          </section>
 
           <div className="mx-auto mt-5 flex min-h-screen w-full max-w-7xl flex-col items-center justify-start space-y-6">
             {records.map(
